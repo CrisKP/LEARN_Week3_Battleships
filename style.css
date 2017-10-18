@@ -1,5 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 table {
   border: solid black 3px;
+  float: left;
 }
 /* added width and height to our table data squares */
 td {
@@ -10,4 +15,14 @@ td {
 }
 .torpedoed {
   background-color: red;
+}
+#torps {
+  float: right;
+  margin-left: 5px;
+  border: solid red 3px;
+  margin-right: 70px;
+  padding: 20px 40px 20px 10px;
+}
+#container {
+  margin: 25px;
 }
