@@ -8,3 +8,6 @@ td {
   height: 50px;
   text-align: center;
 }
+.torpedoed {
+  background-color: red;
+}
