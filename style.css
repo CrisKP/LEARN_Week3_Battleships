@@ -16,6 +16,10 @@ td {
 .torpedoed {
   background-color: red;
 }
+.missed {
+  background-color: blue;
+  color: white;
+}
 #torps {
   float: right;
   margin-left: 5px;
