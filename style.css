@@ -20,6 +20,9 @@ td {
   background-color: blue;
   color: white;
 }
+.hiddenShips {
+  background-color: yellow;
+}
 #torps {
   float: right;
   margin-left: 5px;
