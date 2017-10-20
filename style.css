@@ -13,15 +13,13 @@ td {
   height: 50px;
   text-align: center;
 }
-.torpedoed {
-  background-color: red;
-}
+
 .missed {
   background-color: blue;
   color: white;
 }
 /*.hiddenShips {
-  
+
 }*/
 .hideShips{
   background-color: yellow;
@@ -35,4 +33,7 @@ td {
 }
 #container {
   margin: 25px;
+}
+.torpedoed {
+  background-color: red;
 }

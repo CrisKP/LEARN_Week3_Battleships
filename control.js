@@ -4,15 +4,20 @@ $(document).ready(function() {
   var torpLeft = 5;
   var hitsCount = 0;
   var isGameOver = false;
-  var shipNum = 2;
+  var shipNum = 99;
   //created a global constant variable called SHIP with a value of one.
   const SHIP = 1;
   //created a global array called board with 10 empty arrays
   // with 10 spots which gives you the 100 squares of board game
   var board = [[], [], [], [], [], [], [], [], [], []];
+  //var shipBoard = [[], [], [], [], [], [], [], [], [], []];
   var randRow;
   var randCol;
+  var cords;
 
+  // this is our variable that holds all the coordinates for the placed
+  // ships
+  var shipLocations = [];
   // CREATE BOARD -----------------------------------------------------------
 
   //loop appends 10 table rows with ids into the table (making the grid)
@@ -30,21 +35,46 @@ $(document).ready(function() {
   function randNums(){
     var randRow = Math.floor(Math.random() * 10) + 0;
     var randCol = Math.floor(Math.random() * 10) + 0;
-    return [randRow, randCol]
+    return [randRow, randCol];
   }
+
+  //function that takes randNums(cords) and cheks if the is anything around
 
   // for loop runs randNum to get location of ships
-  for(let y = 0; y < shipNum; y++){
-    var cords = randNums();
+  var y = 0;
+  function makeRandomShips(){
+    while (y < shipNum){
+      cords = randNums();
+      //shipPlacement(cords)
+      // add class of hiddenShips to each square with a ship
+      if (shipLocations.includes([cords[0]][cords[1]])){
+        cords = randNums();
+      } else {
+        $('tr#'+cords[0]).find('#td'+cords[1]).addClass("hiddenShips");
 
-    // add class of hiddenShips to each square with a ship
-
-    $('tr#'+cords[0]).find('#td'+cords[1]).addClass("hiddenShips");
-
-    // update board array with ship location
-    board[cords[0]][cords[1]] = SHIP;
-
+        // update board array with ship location
+        board[cords[0]][cords[1]] = SHIP;
+        shipLocations.push([cords[0], cords[1]]);
+        // shipBoard.splice((cords[0], cords[1]), 1)
+        y++
+      }
+    }
   }
+  console.log(shipLocations.leng);
+  makeRandomShips();
+
+  // loop through all ships to be placed on the board
+
+  // while there are still ships to be placed :
+
+  // step1 : call the randNums function to find possible ship cords
+
+  // check the shiplocations array to ensure that the cord doesn't exist in the array
+
+  // if it does - go back to step one
+
+  // you will end up with an array of all the cords of all ships to be placed, with no duplicates
+
 
   console.log(board);
 
