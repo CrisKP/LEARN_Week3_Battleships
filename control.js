@@ -33,15 +33,9 @@ $(document).ready(function() {
     return [randRow, randCol]
   }
 
-
-    var hiddenCords = []
   // for loop runs randNum to get location of ships
   for(let y = 0; y < shipNum; y++){
     var cords = randNums();
-    // save coordinates
-
-    var newCord = randNums();
-    cords.push(newCord);
 
     // add class of hiddenShips to each square with a ship
 
@@ -49,7 +43,7 @@ $(document).ready(function() {
 
     // update board array with ship location
     board[cords[0]][cords[1]] = SHIP;
-    // hiddenCords = [cords[0], cords[1]];
+
   }
 
   console.log(board);
@@ -96,8 +90,6 @@ $(document).ready(function() {
       if (isGameOver) {
       $(".hiddenShips").addClass("hideShips")
       }
-
-
 
 
   }));
