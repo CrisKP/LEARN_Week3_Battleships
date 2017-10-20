@@ -51,9 +51,7 @@ $(document).ready(function() {
     board[cords[0]][cords[1]] = SHIP;
     // hiddenCords = [cords[0], cords[1]];
   }
-  console.log("newCord: " + newCord);
-  console.log("cords: " + cords);
-  console.log("hiddenCords: " + hiddenCords);
+
   console.log(board);
 
 
@@ -86,6 +84,7 @@ $(document).ready(function() {
       if (torpLeft == 0) {
         $("#winDisplay").text("You're out of torpedoes!");
         $("td").off("click");
+        isGameOver = true;
       }
 
       if (hitsCount == shipNum) {
@@ -94,9 +93,9 @@ $(document).ready(function() {
         isGameOver = true;
       }
 
-      // if (isGameOver) {
-      //
-      // }
+      if (isGameOver) {
+      $(".hiddenShips").addClass("hideShips")
+      }
 
 
 

@@ -21,6 +21,9 @@ td {
   color: white;
 }
 .hiddenShips {
+  /*background-color: yellow;*/
+}
+.hideShips{
   background-color: yellow;
 }
 #torps {
